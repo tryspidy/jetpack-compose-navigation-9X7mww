@@ -1,0 +1,15 @@
+val navController = rememberNavController()
+
+NavHost(navController, startDestination = "profile") {
+    composable("profile") { Profile(...) }
+    composable("friendslist") { FriendsList(...) }
+    ...
+}
+
+fun Profile(navController: NavController) {
+    ...
+    Button(onClick = { navController.navigate("friends") }) {
+        Text(text = "Navigate next")
+    }
+    ...
+}
